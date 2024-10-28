@@ -8,7 +8,7 @@ export default function Post() {
                 <h2>iPad Mini 2024: Keeping up with the pack</h2>
                 <p className="info">
                     <a href="" className="author">Azouz Belmouz</a>
-                    <time datetime="">10-27-2024 11:33</time>
+                    <time dateTime="">10-27-2024 11:33</time>
                 </p>
                 <p className="summary">It was a lean few years for the iPad. The tablet fell out of favor with Apple, as the company turned its focus to other categories like mobile, content, wearables, and mixed reality</p>
             </div>
