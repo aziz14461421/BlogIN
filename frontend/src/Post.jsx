@@ -1,16 +1,24 @@
-export default function Post() {
+import {formatISO9075} from "date-fns";
+import { Link } from "react-router-dom";
+export default function Post({_id,title,summary,content,cover,createdAt,author}) {
+    const pathToImage = '../..'+cover;
     return(
         <div className="post">
             <div className="image">
-                <img src="https://techcrunch.com/wp-content/uploads/2024/10/CMC_8083.jpg?resize=1280,853" alt="" />
+                <Link to={`/post/${_id}`}>
+                    <img src={'http://localhost:4000/'+cover} alt="" />
+                </Link>
+
             </div>
             <div className="texts">
-                <h2>iPad Mini 2024: Keeping up with the pack</h2>
+                <Link to={`/post/${_id}`}>
+                    <h2>{title}</h2>
+                </Link>
                 <p className="info">
-                    <a href="" className="author">Azouz Belmouz</a>
-                    <time dateTime="">10-27-2024 11:33</time>
+                    <a href="" className="author">{author.username}</a>
+                    <time dateTime="">{formatISO9075(new Date(createdAt))}</time>
                 </p>
-                <p className="summary">It was a lean few years for the iPad. The tablet fell out of favor with Apple, as the company turned its focus to other categories like mobile, content, wearables, and mixed reality</p>
+                <p className="summary">{summary}</p>
             </div>
         </div>
     );
